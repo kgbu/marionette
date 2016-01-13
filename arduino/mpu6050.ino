@@ -26,7 +26,7 @@ void setup(){
 
 void loop(){
   Wire.beginTransmission(MPU_addr);
-  Wire.write(0x38); // starting with register 0x38 (ACCEL_XOUT_H)
+  Wire.write(0x3B); // starting with register 0x38 (ACCEL_XOUT_H)
   Wire.endTransmission(false);
   Wire.requestFrom(MPU_addr,14,true); // request a total of 14 registers
   AcX=Wire.read()<<8|Wire.read(); // 0x3B (ACCEL_XOUT_H) & 0x3C (ACCEL_XOUT_L)
